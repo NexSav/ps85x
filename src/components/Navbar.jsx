@@ -36,13 +36,12 @@ const Navbar = () => {
     {
       label: 'Our School',
       submenu: [
-        { label: 'About Us', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2188967' },
-        { label: 'NYSED CSD 10 Learning Technology Grant 2025', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2672503' },
-        { label: 'LTG at P.S. 85', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2299098' },
-        { label: 'LTG at P.S. 85 Phase 1', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2299098' },
-        { label: 'LTG @ P.S. 85 Phase 2', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2413423' },
-        { label: 'LTG @ P.S. 85 Phase 3', href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2539008' },
-        { label: "Principal's Message", href: 'https://www.ps85bronx.org/apps/pages/index.jsp?uREC_ID=2191825&type=d&pREC_ID=2188968' },
+        { label: 'About Us', href: '/about' },
+        { label: 'NYSED CSD 10 Learning Technology Grant 2025', href: '/nysed-grant-2025' },
+        { label: 'LTG at P.S. 85 Phase 1', href: '/ltg-phase-1' },
+        { label: 'LTG @ P.S. 85 Phase 2', href: '/ltg-phase-2' },
+        { label: 'LTG @ P.S. 85 Phase 3', href: '/ltg-phase-3' },
+        { label: "Principal's Message", href: '/principal-message' },
       ]
     },
     {
