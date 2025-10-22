@@ -93,10 +93,10 @@ const Navbar = () => {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav
-          className={`relative mt-4 rounded-2xl transition-all duration-200 ${
+          className={`relative mt-4 rounded-2xl transition-all duration-300 ${
             isScrolled
-              ? 'bg-white shadow-md'
-              : 'bg-white/60 backdrop-blur-md shadow-sm'
+              ? 'bg-white shadow-lg border border-gray-200'
+              : 'bg-transparent'
           }`}
           aria-label="Primary navigation"
         >
@@ -105,9 +105,9 @@ const Navbar = () => {
             {/* Logo */}
             <a href="#home" className="flex items-center -my-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-lg">
               <img
-                src="/assets/images/logo.png"
+                src={isScrolled ? "/assets/images/logo.png" : "/assets/images/logo_white.png"}
                 alt="PS 85 The Great Expectations School"
-                className="h-20 w-auto md:h-24"
+                className="h-20 w-auto md:h-24 transition-opacity duration-300"
               />
             </a>
 
@@ -119,7 +119,9 @@ const Navbar = () => {
                     <>
                       <button
                         onClick={() => toggleSubmenu(index)}
-                        className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded px-2 py-1"
+                        className={`flex items-center gap-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded px-2 py-1 ${
+                          isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                        }`}
                         aria-expanded={openSubmenu === index}
                       >
                         {item.label}
@@ -142,7 +144,9 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded px-2 py-1"
+                      className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded px-2 py-1 ${
+                        isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                      }`}
                     >
                       {item.label}
                     </a>
@@ -154,7 +158,9 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className={`lg:hidden p-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+              }`}
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -164,7 +170,7 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-gray-100 px-4 py-4 space-y-3">
+            <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-3 rounded-b-2xl">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.submenu ? (

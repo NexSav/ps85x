@@ -169,13 +169,18 @@ const HomePage = () => {
       <main id="main-content">
         {/* ==================== HERO SECTION ==================== */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero">
-          {/* Background Image (temporary, awaiting video) */}
-          <div className="absolute inset-0 z-0" data-temp="true">
-            <img
-              src="https://3.files.edl.io/6493/24/12/03/123831-bf60628f-02ab-4a64-bc6a-8c9e59ceb2b1.jfif"
-              alt=""
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
-            />
+              aria-label="PS85 school environment video"
+            >
+              <source src="/assets/videos/home/ps85.mp4" type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40" />
           </div>
 
